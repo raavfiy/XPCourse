@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - XP Course</title>
+  <link rel="icon" type="image/x-icon" href="../assets/icons8-windows-xp-32 (1).png">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- HEADER & NAVIGATION (IE6 THEME) -->
+  <header class="header">
+    <div class="window-titlebar">
+      <div class="window-title">
+        <span class="window-icon">🌐</span> XP Course - Internet Explorer
+      </div>
+      <div class="window-controls">
+        <div class="win-btn win-btn-min">-</div>
+        <div class="win-btn win-btn-max">■</div>
+        <div class="win-btn win-btn-close">×</div>
+      </div>
+    </div>
+
+    <div class="container navbar">
+      <a href="../index.html" class="logo">XP<span>Course</span></a>
+
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="courses.html" class="nav-link">Kursus</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <div class="nav-auth">
+          <a href="signin.html" class="btn nav-link active">Sign In</a>
+          <a href="signup.html" class="btn btn-secondary">Sign Up</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="address-bar">
+      <span class="address-label">Address</span>
+      <div class="address-input-wrapper">
+        <span class="address-icon">🌐</span>
+        <input type="text" class="address-input" value="http://www.xpcourse.com/pages/signin.html" readonly>
+      </div>
+      <button class="address-go-btn">Go ➔</button>
+    </div>
+  </header>
+
+  <section class="auth-section">
+    <div class="auth-card xp-window">
+      <div class="window-titlebar">
+        <div class="window-title">🔐 User_Login.exe</div>
+        <div class="window-controls">
+          <div class="win-btn win-btn-min">-</div>
+          <div class="win-btn win-btn-max">■</div>
+          <div class="win-btn win-btn-close">×</div>
+        </div>
+      </div>
+      <div class="window-body">
+        <h2>Selamat Datang Kembali</h2>
+        <p class="auth-subtitle">Masuk untuk melanjutkan pembelajaranmu</p>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" placeholder="nama@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Masuk</button>
+        </form>
+        <div class="auth-footer">
+          Belum punya akun? <a href="signup.html">Daftar Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-taskbar">
+        <div class="taskbar-start">
+          <button class="taskbar-start-btn" onclick="location.href='../index.html'">Start</button>
+        </div>
+        <div class="taskbar-windows">
+          <div class="taskbar-window-tab active">
+            🌐 XP Course - Sign...
+          </div>
+        </div>
+        <div class="taskbar-tray">
+          <span class="tray-copyright">&copy; 2026 XP Course</span>
+          <div class="tray-clock">
+            🕒 <span id="trayClockTime">12:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Clock update
+    function updateClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      hours = hours < 10 ? '0' + hours : hours;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      const clockEl = document.getElementById('trayClockTime');
+      if (clockEl) clockEl.textContent = hours + ':' + minutes;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Responsive Mobile Menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+      });
+    }
+
+  </script>
+
+</body>
+
+</html>

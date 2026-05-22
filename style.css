@@ -1,0 +1,1182 @@
+/* ==========================================================================
+   WINDOWS XP LUNA THEME - GLOBAL CSS
+   ========================================================================== */
+:root {
+  /* Windows XP Luna Color Palette */
+  --xp-blue-dark: #002e9c;
+  --xp-blue: #245dda;
+  --xp-blue-light: #3a8dfd;
+  --xp-blue-glossy: linear-gradient(to bottom, #0058e6 0%, #3a8dfd 9%, #0056e3 14%, #0045c5 54%, #0050e1 86%, #005df5 100%);
+
+  --xp-green-dark: #2f6d1b;
+  --xp-green: #3c8b22;
+  --xp-green-light: #53a83b;
+  --xp-green-glossy: linear-gradient(to bottom, #53a83b 0%, #357b1d 100%);
+
+  --xp-orange: #ff9b00;
+  --xp-orange-hover: #e08800;
+
+  --xp-silver: #ece9d8;
+  --xp-silver-border: #b2b2a2;
+  --xp-silver-highlight: #ffffff;
+
+  --xp-gray-bg: #ece9d8;
+  --xp-window-bg: #ffffff;
+
+  /* Fallbacks for existing classes */
+  --primary-color: var(--xp-blue);
+  --primary-hover: var(--xp-blue-dark);
+  --secondary-color: var(--xp-green);
+  --secondary-hover: var(--xp-green-dark);
+  --text-dark: #000000;
+  --text-light: #4a4a4a;
+  --bg-light: #ecf2fe;
+  --bg-white: #ffffff;
+  --border-color: #b2b2a2;
+  --font-main: 'Tahoma', 'Trebuchet MS', 'Segoe UI', Geneva, sans-serif;
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-dark);
+  line-height: 1.5;
+  background-color: #d6e4ff;
+  background-image: linear-gradient(135deg, #cbdcff 0%, #ecf2fe 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  /* Leave space for bottom taskbar footer */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   REUSABLE WINDOWS XP UTILITIES (XP Window Deco)
+   ========================================================================== */
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* Standard XP Window Frame */
+.xp-window {
+  background-color: var(--xp-silver);
+  border: 3px solid var(--xp-blue);
+  border-radius: 7px 7px 0 0;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.window-titlebar {
+  background: var(--xp-blue-glossy);
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-family: 'Trebuchet MS', Tahoma, sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 0.9rem;
+  user-select: none;
+  border-bottom: 1px solid var(--xp-blue-dark);
+}
+
+.window-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.window-controls {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.win-btn {
+  width: 21px;
+  height: 21px;
+  border-radius: 3px;
+  border: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.75rem;
+  cursor: pointer;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.5);
+  font-family: 'Trebuchet MS', sans-serif;
+  line-height: 1;
+}
+
+.win-btn-min {
+  background: linear-gradient(to bottom, #3a8dfd 0%, #0054e3 100%);
+  color: white;
+}
+
+.win-btn-max {
+  background: linear-gradient(to bottom, #3a8dfd 0%, #0054e3 100%);
+  color: white;
+}
+
+.win-btn-close {
+  background: linear-gradient(to bottom, #f58a6b 0%, #e04343 45%, #a01a1a 100%);
+  color: white;
+  border-color: #c23333;
+}
+
+.win-btn:hover {
+  filter: brightness(1.15);
+}
+
+.win-btn:active {
+  box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.5), inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.window-body {
+  padding: 20px;
+  background-color: var(--xp-window-bg);
+  margin: 3px;
+  border: 1px solid var(--xp-silver-border);
+}
+
+.window-body-silver {
+  background-color: var(--xp-silver);
+  padding: 20px;
+  margin: 3px;
+  border: 1px solid var(--xp-silver-border);
+}
+
+/* ==========================================================================
+   BUTTONS STYLING
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  padding: 8px 20px;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 0.9rem;
+  font-weight: normal;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 3px;
+  transition: none;
+  /* Instant Windows response */
+  outline: none;
+}
+
+/* Classic Luna Primary Button (Glossy XP Blue) */
+.btn-primary {
+  background: linear-gradient(to bottom, #7faaff 0%, #245dda 10%, #1545b2 90%, #245dda 100%);
+  color: #ffffff;
+  border: 1px solid #103080;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.4), 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to bottom, #9ec0ff 0%, #3b74f2 10%, #2055d0 90%, #3b74f2 100%);
+  border-color: #103080;
+}
+
+.btn-primary:active {
+  background: linear-gradient(to bottom, #103080 0%, #1c4bb8 100%);
+  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Start Button styled Secondary Button (Glossy Green) */
+.btn-secondary {
+  background: var(--xp-green-glossy);
+  color: #ffffff;
+  border: 1px solid var(--xp-green-dark);
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.4), 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(to bottom, #6cd94e 0%, #469a27 100%);
+}
+
+.btn-secondary:active {
+  background: linear-gradient(to bottom, #2b6016 0%, #3a8020 100%);
+  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Bevel Win32 Silver Button */
+.btn-classic {
+  background-color: var(--xp-silver);
+  color: #000000;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.btn-classic:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+  padding: 9px 19px 7px 21px;
+  /* pressed movement */
+}
+
+/* ==========================================================================
+   INPUTS & FORM CONTROLS
+   ========================================================================== */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px 10px;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 0.9rem;
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  /* Win32 Inset */
+  border-radius: 0;
+  /* Sharp corners */
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: #002e9c #cbdcff #cbdcff #002e9c;
+  outline: 1px dotted #808080;
+}
+
+/* ==========================================================================
+   HEADER & NAVBAR (INTERNET EXPLORER 6 THEME)
+   ========================================================================== */
+.header {
+  background-color: var(--xp-silver);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid var(--xp-blue);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* IE6 Top Window Bar */
+.header .window-titlebar {
+  border-radius: 0;
+  border-bottom: 1px solid var(--xp-silver-border);
+}
+
+/* IE6 Menu Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: var(--xp-silver);
+  border-bottom: 1px solid #ffffff;
+  box-shadow: inset 0 -1px 0 var(--xp-silver-border);
+}
+
+.logo {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--xp-blue);
+  text-shadow: 1px 1px 0px #fff;
+}
+
+.logo span {
+  color: var(--xp-orange);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 0.85rem;
+  font-weight: normal;
+  color: #000000;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.nav-link:hover {
+  background-color: #316ac5;
+  color: #ffffff;
+  border-color: #316ac5;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  background-color: #ffffff;
+  border: 1px solid var(--xp-silver-border);
+  color: #000000;
+}
+
+.nav-auth {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.nav-auth .btn {
+  padding: 4px 12px;
+  font-size: 0.8rem;
+}
+
+/* IE6 Address Bar */
+.address-bar {
+  background-color: var(--xp-silver);
+  display: flex;
+  align-items: center;
+  padding: 6px 15px;
+  gap: 10px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid var(--xp-silver-border);
+}
+
+.address-label {
+  font-size: 0.8rem;
+  color: #555555;
+  font-family: 'Tahoma', sans-serif;
+  user-select: none;
+}
+
+.address-input-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  padding: 2px 6px;
+  gap: 6px;
+}
+
+.address-icon {
+  font-size: 0.85rem;
+}
+
+.address-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 0.8rem;
+  color: #000000;
+  background: transparent;
+}
+
+.address-go-btn {
+  background: linear-gradient(to bottom, #ffffff 0%, #ece9d8 100%);
+  border: 1px solid #808080;
+  border-radius: 2px;
+  color: var(--xp-green-dark);
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.address-go-btn:active {
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Menu Toggle for Mobile */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  background-color: var(--xp-silver);
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  padding: 5px 8px;
+  border-radius: 3px;
+}
+
+.menu-toggle:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.menu-toggle span {
+  width: 18px;
+  height: 2px;
+  background-color: #000000;
+  border-radius: 1px;
+}
+
+/* ==========================================================================
+   HALAMAN 1: HOME (HERO, SEKSI, CARD)
+   ========================================================================== */
+/* Bliss Wallpaper background */
+.hero {
+  padding: 60px 0;
+  background: linear-gradient(to bottom, #6cb2e9 0%, #7ec0ee 40%, #52a83b 70%, #307a1e 100%);
+  border-bottom: 3px solid var(--xp-blue);
+  box-shadow: inset 0 -5px 15px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+.hero-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-content {
+  /* Styled like a Setup Dialog Box in HTML directly, but has specific details */
+  color: #000000;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: var(--xp-blue-dark);
+}
+
+.hero-content p {
+  font-size: 0.95rem;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image .xp-window {
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 0;
+}
+
+.hero-image .placeholder-img {
+  width: 100%;
+  height: 260px;
+  background-color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Seksi Fitur Unggulan */
+.features {
+  padding: 50px 0;
+  background-color: rgba(236, 233, 216, 0.5);
+  /* Soft silver overlay */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 35px;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: var(--xp-blue-dark);
+  text-shadow: 1px 1px 0px #fff;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--xp-orange);
+  margin: 8px auto 0;
+  border-radius: 1px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.feature-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.feature-box h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--xp-blue-dark);
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.feature-box p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.feature-icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.1));
+}
+
+/* Grid Kursus */
+.courses-section {
+  padding: 50px 0;
+  background-color: rgba(214, 228, 255, 0.4);
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.course-img-placeholder {
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(135deg, #7ec0ee 0%, #e6f0fa 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #1a408a;
+  font-family: 'Tahoma', sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--xp-silver-border);
+  padding: 10px;
+  text-align: center;
+}
+
+.course-img-placeholder::before {
+  content: "📁";
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+  filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.1));
+}
+
+.course-body {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-tag {
+  display: inline-block;
+  padding: 3px 6px;
+  background-color: #dbeafe;
+  color: var(--xp-blue-dark);
+  font-size: 0.75rem;
+  font-weight: bold;
+  border: 1px solid #a3c2f7;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  align-self: flex-start;
+}
+
+.course-title {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: var(--xp-blue-dark);
+  line-height: 1.3;
+}
+
+.course-mentor {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+
+.course-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px dotted var(--xp-silver-border);
+  margin-top: auto;
+}
+
+.course-price {
+  font-weight: bold;
+  color: #cc0000;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   HALAMAN 3: ABOUT US
+   ========================================================================== */
+.about-section {
+  padding: 50px 0;
+}
+
+.about-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 45px;
+}
+
+.about-wrapper h3 {
+  color: var(--xp-blue-dark);
+  font-family: 'Trebuchet MS', sans-serif;
+  margin-bottom: 12px;
+}
+
+.about-wrapper p {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member h4 {
+  font-size: 0.95rem;
+  margin-top: 8px;
+  color: var(--xp-blue-dark);
+}
+
+.member-photo {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.member-photo::before {
+  content: "👤";
+  font-size: 3rem;
+  color: #b2b2a2;
+}
+
+/* ==========================================================================
+   HALAMAN 4: CONTACT US
+   ========================================================================== */
+.contact-section {
+  padding: 50px 0;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.contact-info {
+  background: var(--xp-blue-glossy);
+  color: #ffffff;
+  padding: 25px;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.contact-info h3 {
+  font-family: 'Trebuchet MS', sans-serif;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.info-item {
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.info-item h4 {
+  margin-bottom: 4px;
+  color: var(--xp-orange);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-item p {
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   HALAMAN 5 & 6: SIGN IN & SIGN UP
+   ========================================================================== */
+.auth-section {
+  padding: 60px 0;
+  min-height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  max-width: 420px;
+  width: 100%;
+}
+
+.auth-card h2 {
+  color: var(--xp-blue-dark);
+  font-family: 'Trebuchet MS', sans-serif;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  border-top: 1px dotted var(--xp-silver-border);
+  padding-top: 12px;
+}
+
+.auth-footer a {
+  color: var(--xp-blue);
+  font-weight: bold;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   FOOTER (WINDOWS XP TASKBAR & STATUS BAR THEME)
+   ========================================================================== */
+.footer {
+  background-color: var(--xp-blue);
+  background-image: linear-gradient(to bottom, #245dda 0%, #1545b2 50%, #001f66 100%);
+  color: #ffffff;
+  padding: 0;
+  font-size: 0.85rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+  border-top: 2px solid #5a8dec;
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.25);
+  height: 40px;
+}
+
+.footer-content {
+  display: none;
+  /* Hide complex multi-column footer to enforce taskbar style */
+}
+
+.footer .container {
+  height: 100%;
+  padding: 0;
+}
+
+/* Classic Taskbar Bar */
+.footer-taskbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* Taskbar Left: Start Button */
+.taskbar-start {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.taskbar-start-btn {
+  background: linear-gradient(to bottom, #7cc043 0%, #528c11 25%, #3f6e0b 80%, #579815 100%);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  padding: 0 20px 0 15px;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.4), 2px 0 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 2px #000;
+}
+
+.taskbar-start-btn:hover {
+  filter: brightness(1.1);
+}
+
+.taskbar-start-btn::before {
+  content: "❖";
+  font-style: normal;
+  font-size: 1.2rem;
+  color: #fff;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+}
+
+/* Taskbar Middle: Active Windows list */
+.taskbar-windows {
+  display: flex;
+  gap: 5px;
+  flex-grow: 1;
+  padding: 0 10px;
+  align-items: center;
+  height: 100%;
+  overflow-x: auto;
+}
+
+.taskbar-window-tab {
+  background-color: #3870e0;
+  background-image: linear-gradient(to bottom, #528cec 0%, #3065d0 100%);
+  border: 1px solid #1c45a6;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  height: 28px;
+}
+
+.taskbar-window-tab.active {
+  display: flex;
+  background-image: linear-gradient(to bottom, #183e96 0%, #295ab8 100%);
+  border-color: #0b1a40;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+.taskbar-window-tab:hover {
+  filter: brightness(1.1);
+}
+
+/* Taskbar Right: System Tray */
+.taskbar-tray {
+  background-color: #0c8df6;
+  background-image: linear-gradient(to bottom, #0f93ff 0%, #0077d8 100%);
+  border-left: 1px solid #0054e3;
+  padding: 0 15px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.2);
+}
+
+.tray-copyright {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.tray-clock {
+  font-family: 'Tahoma', sans-serif;
+  font-weight: bold;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (SISTEM RESPONSIVE MOBILE)
+   ========================================================================== */
+@media (max-width: 992px) {
+
+  .hero-wrapper,
+  .about-wrapper,
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .courses-grid,
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--xp-silver);
+    padding: 15px;
+    border-bottom: 3px solid var(--xp-blue);
+    border-top: 1px solid var(--xp-silver-border);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    gap: 12px;
+    z-index: 999;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-auth {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  .nav-auth .btn {
+    width: 100%;
+  }
+
+  .courses-grid,
+  .features-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .address-bar {
+    display: none;
+    /* Hide address bar on mobile to optimize space */
+  }
+
+  /* Taskbar tabs are hidden on mobile, leaving just Start and Clock */
+  .taskbar-windows {
+    display: none;
+  }
+
+  .tray-copyright {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   WINDOWS XP STARTUP LOADING SCREEN
+   ========================================================================== */
+.xp-loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #003399 0%, #001e5c 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.xp-loading-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.xp-loading-card {
+  width: 90%;
+  max-width: 420px;
+  background-color: var(--xp-silver);
+  border: 3px solid var(--xp-blue);
+  border-radius: 7px 7px 0 0;
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.xp-loading-card .window-titlebar {
+  background: var(--xp-blue-glossy);
+}
+
+.xp-loading-body {
+  padding: 20px;
+  background-color: var(--xp-window-bg);
+  margin: 3px;
+  border: 1px solid var(--xp-silver-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.xp-loading-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  border-bottom: 1px solid #d0d0d0;
+  padding-bottom: 15px;
+}
+
+.xp-loading-icon {
+  font-size: 2.5rem;
+  animation: xp-icon-pulse 1.5s infinite ease-in-out;
+  user-select: none;
+}
+
+.xp-loading-title-text h3 {
+  font-family: 'Trebuchet MS', sans-serif;
+  color: var(--xp-blue-dark);
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+
+.xp-loading-title-text p {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.xp-progress-track {
+  width: 100%;
+  height: 22px;
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 2px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.xp-progress-bar {
+  display: flex;
+  gap: 2px;
+  width: 66px;
+  height: 100%;
+  position: absolute;
+  left: -70px;
+  animation: xp-progress-slide 1.8s linear infinite;
+}
+
+.xp-progress-block {
+  width: 18px;
+  height: 100%;
+  background: linear-gradient(to bottom, #7faaff 0%, #245dda 15%, #0d3896 85%, #245dda 100%);
+  border-radius: 2px;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.xp-loading-status-text {
+  font-family: 'Tahoma', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  text-align: center;
+  font-weight: bold;
+  height: 18px;
+}
+
+@keyframes xp-progress-slide {
+  0% {
+    left: -70px;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes xp-icon-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}

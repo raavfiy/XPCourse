@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XP Course - Platform E-Learning Masa Depan</title>
+  <link rel="icon" type="image/x-icon" href="/assets/icons8-windows-xp-32 (1).png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- WINDOWS XP STARTUP LOADING SCREEN -->
+  <div id="xp-loading-screen" class="xp-loading-overlay">
+    <div class="xp-loading-card">
+      <div class="window-titlebar">
+        <div class="window-title">⚙️ System Startup</div>
+        <div class="window-controls">
+          <div class="win-btn win-btn-close">×</div>
+        </div>
+      </div>
+      <div class="xp-loading-body">
+        <div class="xp-loading-header">
+          <div class="xp-loading-icon"><img src="../assets/icons8-windows-xp-96.png" alt=""></div>
+          <div class="xp-loading-title-text">
+            <h3>XP Course Setup</h3>
+            <p>Starting services and preparing settings...</p>
+          </div>
+        </div>
+        <div class="xp-progress-track">
+          <div class="xp-progress-bar">
+            <div class="xp-progress-block"></div>
+            <div class="xp-progress-block"></div>
+            <div class="xp-progress-block"></div>
+          </div>
+        </div>
+        <div id="xp-loading-status" class="xp-loading-status-text">Initializing system...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER & NAVIGATION (IE6 THEME) -->
+  <header class="header">
+    <div class="window-titlebar">
+      <div class="window-title">
+        <span class="window-icon">🌐</span> XP Course - Internet Explorer
+      </div>
+      <div class="window-controls">
+        <div class="win-btn win-btn-min">-</div>
+        <div class="win-btn win-btn-max">■</div>
+        <div class="win-btn win-btn-close">×</div>
+      </div>
+    </div>
+
+    <div class="container navbar">
+      <a href="index.html" class="logo">XP<span>Course</span></a>
+
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="pages/courses.html" class="nav-link">Kursus</a>
+        <a href="pages/about.html" class="nav-link">About Us</a>
+        <a href="pages/contact.html" class="nav-link">Contact</a>
+        <div class="nav-auth">
+          <a href="pages/signin.html" class="btn nav-link">Sign In</a>
+          <a href="pages/signup.html" class="btn btn-secondary">Sign Up</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="address-bar">
+      <span class="address-label">Address</span>
+      <div class="address-input-wrapper">
+        <span class="address-icon">🌐</span>
+        <input type="text" class="address-input" value="http://www.xpcourse.com/index.html" readonly>
+      </div>
+      <button class="address-go-btn">Go ➔</button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-wrapper">
+      <div class="hero-content xp-window">
+        <div class="window-titlebar">
+          <div class="window-title">👤 XP Course Welcome Wizard</div>
+          <div class="window-controls">
+            <div class="win-btn win-btn-min">-</div>
+            <div class="win-btn win-btn-max">■</div>
+            <div class="win-btn win-btn-close">×</div>
+          </div>
+        </div>
+        <div class="window-body">
+          <h1>Kuasai Skill Digital Bersama Mentor Praktisi</h1>
+          <p>Akses ratusan materi pemrograman, desain grafis, hingga data science yang dirancang khusus untuk
+            mempercepat
+            karier impianmu.</p>
+          <a href="pages/courses.html" class="btn btn-secondary">Mulai Belajar Sekarang</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="xp-window">
+          <div class="window-titlebar">
+            <div class="window-title">🖼️ preview.jpg - Fax Viewer</div>
+            <div class="window-controls">
+              <div class="win-btn win-btn-min">-</div>
+              <div class="win-btn win-btn-max">■</div>
+              <div class="win-btn win-btn-close">×</div>
+            </div>
+          </div>
+          <div class="placeholder-img">
+            <img src="assets/retro_hero.png" alt="Student Coding Illustration">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Mengapa Memilih Kami</h2>
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-box xp-window">
+          <div class="window-titlebar">
+            <div class="window-title">📂 Kurikulum.sys</div>
+            <div class="window-controls">
+              <div class="win-btn win-btn-close">×</div>
+            </div>
+          </div>
+          <div class="window-body">
+            <div class="feature-icon">📚</div>
+            <h3>Kurikulum Ter-update</h3>
+            <p>Materi disesuaikan dengan kebutuhan industri teknologi saat ini.</p>
+          </div>
+        </div>
+        <!-- Feature 2 -->
+        <div class="feature-box xp-window">
+          <div class="window-titlebar">
+            <div class="window-title">📂 Mentor.sys</div>
+            <div class="window-controls">
+              <div class="win-btn win-btn-close">×</div>
+            </div>
+          </div>
+          <div class="window-body">
+            <div class="feature-icon">👨‍💻</div>
+            <h3>Mentor Berpengalaman</h3>
+            <p>Belajar langsung dari para engineer dan desainer senior di bidangnya.</p>
+          </div>
+        </div>
+        <!-- Feature 3 -->
+        <div class="feature-box xp-window">
+          <div class="window-titlebar">
+            <div class="window-title">📂 Sertifikat.sys</div>
+            <div class="window-controls">
+              <div class="win-btn win-btn-close">×</div>
+            </div>
+          </div>
+          <div class="window-body">
+            <div class="feature-icon">📜</div>
+            <h3>Sertifikat Digital</h3>
+            <p>Dapatkan sertifikat resmi setiap kali kamu menyelesaikan kelas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR COURSES SECTION -->
+  <section class="courses-section">
+    <div class="container">
+      <h2 class="section-title">Kelas Populer</h2>
+      <div class="courses-grid">
+        <!-- Card 1 -->
+        <div class="course-card xp-window">
+          <div class="window-titlebar">
+            <div class="window-title">💻 Development.exe</div>
+            <div class="window-controls">
+              <div class="win-btn win-btn-close">×</div>
+            </div>
+          </div>
+          <div class="course-img-placeholder">Web Development</div>
+          <div class="window-body">
+            <span class="course-tag">Development</span>
+            <h3 class="course-title">Frontend Web Development Dasar</h3>
+            <p class="course-mentor">Oleh: Alex Supriadi</p>
+            <div class="course-footer">
+              <span class="course-price">Rp 149.000</span>
+              <a href="#" class="btn btn-primary">Detail</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="course-card xp-window">
+          <div class="window-titlebar">
+            <div class="window-title">🎨 UIUX_Design.exe</div>
+            <div class="window-controls">
+              <div class="win-btn win-btn-close">×</div>
+            </div>
+          </div>
+          <div class="course-img-placeholder">UI/UX Design</div>
+          <div class="window-body">
+            <span class="course-tag">UI/UX Design</span>
+            <h3 class="course-title">UI/UX Design Fundamental</h3>
+            <p class="course-mentor">Oleh: Caturyo, M.Kom</p>
+            <div class="course-footer">
+              <span class="course-price">Rp 199.000</span>
+              <a href="#" class="btn btn-primary">Detail</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="course-card xp-window">
+          <div class="window-titlebar">
+            <div class="window-title">📊 Data_Science.exe</div>
+            <div class="window-controls">
+              <div class="win-btn win-btn-close">×</div>
+            </div>
+          </div>
+          <div class="course-img-placeholder">Data Science</div>
+          <div class="window-body">
+            <span class="course-tag">Data Science</span>
+            <h3 class="course-title">Python untuk Analisis Data</h3>
+            <p class="course-mentor">Oleh: Dr. Suyatno</p>
+            <div class="course-footer">
+              <span class="course-price">Rp 249.000</span>
+              <a href="#" class="btn btn-primary">Detail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-taskbar">
+        <div class="taskbar-start">
+          <button class="taskbar-start-btn" onclick="location.href='index.html'">Start</button>
+        </div>
+        <div class="taskbar-windows">
+          <div class="taskbar-window-tab active">
+            🌐 XP Course - Internet
+          </div>
+        </div>
+        <div class="taskbar-tray">
+          <span class="tray-copyright">&copy; 2026 XP Course</span>
+          <div class="tray-clock">
+            🕒 <span id="trayClockTime">12:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Clock update
+    function updateClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      hours = hours < 10 ? '0' + hours : hours;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      const clockEl = document.getElementById('trayClockTime');
+      if (clockEl) clockEl.textContent = hours + ':' + minutes;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Responsive Mobile Menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+      });
+    }
+
+    // Loading Screen Control
+    (function () {
+      const statusMsgs = [
+        "Initializing system...",
+        "Loading modules...",
+        "Starting interface...",
+        "Preparing workspace...",
+        "Connecting services...",
+        "Starting XP Course..."
+      ];
+      let msgIndex = 0;
+      const statusEl = document.getElementById('xp-loading-status');
+      const loaderEl = document.getElementById('xp-loading-screen');
+
+      const intervalId = setInterval(() => {
+        msgIndex = (msgIndex + 1) % statusMsgs.length;
+        if (statusEl) statusEl.textContent = statusMsgs[msgIndex];
+      }, 300);
+
+      const hideLoader = () => {
+        setTimeout(() => {
+          clearInterval(intervalId);
+          if (statusEl) statusEl.textContent = "Welcome!";
+          setTimeout(() => {
+            if (loaderEl) {
+              loaderEl.classList.add('fade-out');
+            }
+          }, 300);
+        }, 1200);
+      };
+
+      const closeBtn = loaderEl ? loaderEl.querySelector('.win-btn-close') : null;
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          clearInterval(intervalId);
+          if (loaderEl) loaderEl.classList.add('fade-out');
+        });
+      }
+
+      if (document.readyState === 'complete') {
+        hideLoader();
+      } else {
+        window.addEventListener('load', hideLoader);
+      }
+    })();
+  </script>
+
+</body>
+
+</html>

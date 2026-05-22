@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - XP Course</title>
+  <link rel="icon" type="image/x-icon" href="../assets/icons8-windows-xp-32 (1).png">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- HEADER & NAVIGATION (IE6 THEME) -->
+  <header class="header">
+    <div class="window-titlebar">
+      <div class="window-title">
+        <span class="window-icon">🌐</span> XP Course - Internet Explorer
+      </div>
+      <div class="window-controls">
+        <div class="win-btn win-btn-min">-</div>
+        <div class="win-btn win-btn-max">■</div>
+        <div class="win-btn win-btn-close">×</div>
+      </div>
+    </div>
+
+    <div class="container navbar">
+      <a href="../index.html" class="logo">XP<span>Course</span></a>
+
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="courses.html" class="nav-link">Kursus</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <div class="nav-auth">
+          <a href="signin.html" class="btn nav-link">Sign In</a>
+          <a href="signup.html" class="btn btn-secondary">Sign Up</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="address-bar">
+      <span class="address-label">Address</span>
+      <div class="address-input-wrapper">
+        <span class="address-icon">🌐</span>
+        <input type="text" class="address-input" value="http://www.xpcourse.com/pages/contact.html" readonly>
+      </div>
+      <button class="address-go-btn">Go ➔</button>
+    </div>
+  </header>
+
+  <section class="contact-section" style="padding: 40px 0;">
+    <div class="container">
+      <h2 class="section-title">Hubungi Kami</h2>
+      <div class="contact-wrapper">
+        <!-- Contact Info Window -->
+        <div class="contact-info xp-window">
+          <div class="window-titlebar">
+            <div class="window-title">☎️ Contact_Details.txt</div>
+            <div class="window-controls">
+              <div class="win-btn win-btn-close">×</div>
+            </div>
+          </div>
+          <div class="window-body" style="background: transparent; border: none; color: #ffffff; padding: 10px 0 0 0;">
+            <p style="margin-bottom: 20px; font-size: 0.85rem;">Ada pertanyaan atau butuh bantuan teknis seputar kelas?
+              Silakan hubungi tim kami.</p>
+            <div class="info-item">
+              <h4>Email</h4>
+              <p>support@xpcourse.com</p>
+            </div>
+            <div class="info-item">
+              <h4>WhatsApp</h4>
+              <p>+62 812-3456-7890</p>
+            </div>
+            <div class="info-item">
+              <h4>Alamat</h4>
+              <p>Jl. Pendidikan No. 45, Jakarta, Indonesia</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Window -->
+        <div class="contact-form xp-window">
+          <div class="window-titlebar">
+            <div class="window-title">✉️ Send_Message.exe</div>
+            <div class="window-controls">
+              <div class="win-btn win-btn-min">-</div>
+              <div class="win-btn win-btn-max">■</div>
+              <div class="win-btn win-btn-close">×</div>
+            </div>
+          </div>
+          <div class="window-body">
+            <form action="#" method="POST">
+              <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" class="form-control" placeholder="Masukkan nama Anda" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Alamat Email</label>
+                <input type="email" id="email" class="form-control" placeholder="name@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Pesan Anda</label>
+                <textarea id="message" class="form-control" rows="5"
+                  placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." style="resize: vertical;"
+                  required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Pesan</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-taskbar">
+        <div class="taskbar-start">
+          <button class="taskbar-start-btn" onclick="location.href='../index.html'">Start</button>
+        </div>
+        <div class="taskbar-windows">
+          <div class="taskbar-window-tab active">
+            🌐 XP Course - Cont...
+          </div>
+        </div>
+        <div class="taskbar-tray">
+          <span class="tray-copyright">&copy; 2026 XP Course</span>
+          <div class="tray-clock">
+            🕒 <span id="trayClockTime">12:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Clock update
+    function updateClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      hours = hours < 10 ? '0' + hours : hours;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      const clockEl = document.getElementById('trayClockTime');
+      if (clockEl) clockEl.textContent = hours + ':' + minutes;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Responsive Mobile Menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+      });
+    }
+  </script>
+
+</body>
+
+</html>
